@@ -1,6 +1,6 @@
 import FAQAccordian from '@/components/faq/faq'
 import React from 'react'
-import { general_faqs, application_faqs } from '@/components/data/faqs'
+import { general_faqs, application_faqs } from '@/data/faqs'
 
 export default function FAQPage() {
   return (
