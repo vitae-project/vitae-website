@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef } from 'react'
-import { companies } from '../data/dummy_companies'
-import { useScroll, motion, useTransform } from 'framer-motion'
+import { companies } from '@/data/companies'
+import { useScroll, useTransform, motion } from 'framer-motion'
 
 export default function CompanyCarousel() {
 

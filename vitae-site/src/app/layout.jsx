@@ -1,8 +1,8 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import SmoothScroll from "@/components/lenis";
+import Navbar from "@/components/main/navbar";
+import Footer from "@/components/main/footer";
+import SmoothScroll from "@/components/main/lenis";
 
 const inter = Open_Sans({ subsets: ["latin"]})
 
