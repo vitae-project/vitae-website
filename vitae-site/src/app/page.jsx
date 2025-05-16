@@ -1,3 +1,4 @@
+import React from 'react';
 import Hero from "@/components/home/hero";
 import CompanyCarousel from "@/components/home/companies";
 import About from "@/components/home/about";

@@ -1,16 +1,18 @@
 'use client'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Mailing() {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState('idle');
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('loading');
 
         try {
-            const response = await fetch('/api/mailing', {
+            const response = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -18,13 +20,21 @@ export default function Mailing() {
                 body: JSON.stringify({ email })
             });
 
+            const data = await response.json();
+
             if (!response.ok) {
-                throw new Error('Failed to join waitlist');
+                throw new Error(data.error || 'Failed to join mailing list');
             }
 
             setStatus('success');
             setEmail('');
+            
+            // Redirect to thank you page
+            if (data.redirect) {
+                router.push(data.redirect);
+            }
         } catch (error) {
+            console.error('Subscription error:', error);
             setStatus('error');
         }
     };
@@ -65,12 +75,6 @@ export default function Mailing() {
               >
                 {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
               </button>
-
-              {status === 'success' && (
-                <p className="text-green-600 text-sm">
-                  Thanks for joining! We'll be in touch soon.
-                </p>
-              )}
 
               {status === 'error' && (
                 <p className="text-red-600 text-sm">

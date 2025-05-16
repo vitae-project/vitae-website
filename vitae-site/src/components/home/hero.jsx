@@ -24,7 +24,7 @@ export default function Hero() {
             Discover internships, track your progress and stay organised this application season.
           </p>
           <Link
-            href="/join"
+            href="/mailing-list"
             className="bg-[#B632EA] text-white hover:bg-[#a62bd6] px-4 py-2 rounded-md text-base font-medium"
           >
             Join Our Mailing List
