@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F6F7FE;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@layer components {
+  /** Navbar Styling **/
+
+  /* Navigation Links */
+  .nav-link {
+    @apply font-semibold text-sm
+  }
+
+  /* Action Buttons */
+  .action-button {
+    @apply bg-[#B632EA] text-white hover:bg-[#a62bd6] px-4 py-2 rounded-md text-sm font-medium
+  }
+
+  /** Footer Styling **/
+  .footer-link {
+    @apply hover:text-gray-100 transition-colors duration-300 text-center text-sm
+  }
+
+  /** Home Sections Styling **/
+  .section-title {
+    @apply font-bold text-3xl sm:text-7xl mb-2 text-center
+  }
+
+  .section-subtitle {
+    @apply sm:text-base tracking-wide uppercase
+  }
+
+  .section-main-p {
+    @apply text-center w-[85%] sm:w-[30%] text-[10px] sm:text-xs lg:text-base
+  }
+
+  /** About Section Styling **/
+  .form-input {
+    @apply border-b-2 border-b-black w-full placeholder:text-black p-3 outline-none text-lg backdrop-blur-md bg-white/70
+  }
+
+  .form-submit {
+    @apply action-button text-base
+  }
+}
